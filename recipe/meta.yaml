@@ -15,7 +15,7 @@ source:
     - 0001-Fix-for-mamba-seg-fault.patch
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: libmamba
@@ -36,7 +36,7 @@ outputs:
       host:
         - libsolv {{libsolv}}
         - libcurl
-        - openssl
+        - openssl {{ openssl }}
         - libarchive 
         - nlohmann_json {{nlohmann_json}}
         - cpp-filesystem {{cpp_filesystem}}
@@ -91,7 +91,7 @@ outputs:
         - pip
         - pybind11 {{pybind11}}
         - pybind11-abi
-        - openssl
+        - openssl {{ openssl }}
         - fmt {{ fmt }}
         - libsolv {{ libsolv }}
         - yaml-cpp {{yaml_cpp}}
@@ -130,7 +130,7 @@ outputs:
       host:
         - python
         - pip
-        - openssl
+        - openssl {{ openssl }}
         - {{ pin_subpackage('libmambapy', exact=True) }}
       run:
         - python
